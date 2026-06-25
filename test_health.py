@@ -11,6 +11,7 @@ client = TestClient(app)
 
 
 def test_healthz():
+    """Test health endpoint to verify CI pipeline functionality."""
     resp = client.get("/healthz")
     assert resp.status_code == 200
     assert resp.json() == {"status": "ok"}
